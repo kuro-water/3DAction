@@ -6,11 +6,12 @@ public class Goal : MonoBehaviour
 {
     public GameObject clearText; // クリアテキストを指定する
 
-    void OnCollisionEnter(Collision collision)          // 何かが触れたとき
+    void OnCollisionEnter(Collision collision)                          // 何かが触れたとき
     {
-        if (collision.gameObject.CompareTag("Player"))  // それが"Player"なら、
+        if (collision.gameObject.CompareTag("Player"))                  // それが"Player"なら、
         {
-            clearText.SetActive(true);                  // クリアテキストを表示させる
+            clearText.SetActive(true);                                  // クリアテキストを表示させる
+            Destroy(collision.gameObject.GetComponent<Rigidbody>());    // PlayerのRigidbodyを消す（動きを止める）
         }
     }
 

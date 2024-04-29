@@ -50,12 +50,4 @@ public class PlayerController : MonoBehaviour
         //•ÏX‚µ‚½force‚ğ”½‰f‚³‚¹‚é
         rb.AddForce(force);
     }
-
-    private void OnCollisionEnter(Collision collision)  // ‰½‚©‚ªG‚ê‚½‚Æ‚«A
-    {
-        if (collision.gameObject.CompareTag("Goal"))    // ‚»‚ê‚ª"Goal"‚È‚çA
-        {
-            Destroy(this.GetComponent<Rigidbody>());    //Rigidbody‚ğÁ‚·
-        }
-    }
 }
