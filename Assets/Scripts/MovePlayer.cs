@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class MovePlayer : MonoBehaviour
 {
     private Rigidbody rb; //Rigidbodyを格納する変数
     private Vector3 force;　//力の力量を格納する変数
@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     // 毎フレーム実行される関数
     void Update()
     {
+        if (rb == null) //もしrbがnullなら、
+        {
+            return; //何もせずに関数を終了する
+        }
+
         //forceを毎フレーム初期化。これをしないと重力が反映されない
         force = new Vector3(0f, 0f, 0f);
 

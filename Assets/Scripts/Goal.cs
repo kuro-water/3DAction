@@ -8,6 +8,7 @@ public class Goal : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)                          // 何かが触れたとき
     {
+        Debug.Log("collision" + collision);
         if (collision.gameObject.CompareTag("Player"))                  // それが"Player"なら、
         {
             clearText.SetActive(true);                                  // クリアテキストを表示させる
@@ -19,11 +20,5 @@ public class Goal : MonoBehaviour
     void Start()
     {
         clearText.SetActive(false); // クリアテキストを隠す
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
