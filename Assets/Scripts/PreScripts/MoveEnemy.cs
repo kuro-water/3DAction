@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
 {
-    public Vector3 from;
-    public Vector3 to;
-    public float speed;
+    [SerializeField] private Vector3 from;
+    [SerializeField] private Vector3 to;
+    [SerializeField] private float speed;
     public bool isLoop;
 
     private float startTime;
     private GameObject player;
 
-    // Start is called before the first frame update
+    // ゲーム開始時に一度だけ実行される関数
     void Start()
     {
         // 初期位置を設定
@@ -25,7 +25,7 @@ public class MoveEnemy : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
+    // 毎フレーム実行される関数
     void Update()
     {
         Debug.Log("Player: " + player);

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    public GameObject clearText; // クリアテキストを指定する
+    [SerializeField] private GameObject clearText; // GameClearを表示するテキストオブジェクト
 
     void OnCollisionEnter(Collision collision)                          // 何かが触れたとき
     {
-        Debug.Log("collision" + collision);
         if (collision.gameObject.CompareTag("Player"))                  // それが"Player"なら、
         {
             clearText.SetActive(true);                                  // クリアテキストを表示させる
@@ -16,7 +15,7 @@ public class Goal : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
+    // ゲーム開始時に一度だけ実行される関数
     void Start()
     {
         clearText.SetActive(false); // クリアテキストを隠す
