@@ -37,21 +37,6 @@ public class MovePlayer : MonoBehaviour
             force.x += 10.0f;//x座標に10.0fの力を加える
         }
 
-        if (Input.GetKey(KeyCode.A)) //もしAキーが押されたら、
-        {
-            force.x -= 10.0f; //x座標に-10.0fの力を加える
-        }
-
-        if (Input.GetKey(KeyCode.W)) //もしWキーが押されたら、
-        {
-            force.z += 10.0f; //x座標に-10.0fの力を加える
-        }
-
-        if (Input.GetKey(KeyCode.S)) //もしSキーが押されたら、
-        {
-            force.z -= 10.0f; //x座標に-10.0fの力を加える
-        }
-
         //変更したforceを反映させる
         rb.AddForce(force);
     }
