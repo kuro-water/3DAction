@@ -11,9 +11,9 @@ public class GenerateCoin : MonoBehaviour
     {
         for (int x = -4; x < 5; x += 2)
         {
-            for (int y = 0; y < 7; y += 2)
+            for (int y = -2; y < 7; y += 2)
             {
-                Instantiate(Coin, new Vector3(x, y, 3), Quaternion.identity);
+                Instantiate(Coin, new Vector3(x, y, 30), Quaternion.identity);
             }
         }
     }
